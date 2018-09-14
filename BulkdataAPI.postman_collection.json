@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "46ffb022-470f-4851-b028-8c1b92a84c5d",
+		"name": "BulkdataAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "listings",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "213bcd7c-d321-44ba-a49b-76d58f7270ba",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccessToken",
+						"value": "{{AccessToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://data-services.idxbroker.com/beta/live/listings?idxID={{idxID}}",
+					"protocol": "https",
+					"host": [
+						"data-services",
+						"idxbroker",
+						"com"
+					],
+					"path": [
+						"beta",
+						"live",
+						"listings"
+					],
+					"query": [
+						{
+							"key": "idxID",
+							"value": "{{idxID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "images",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccessToken",
+						"value": "{{AccessToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					},
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://data-services.idxbroker.com/beta/live/images?idxID={{idxID}}",
+					"protocol": "https",
+					"host": [
+						"data-services",
+						"idxbroker",
+						"com"
+					],
+					"path": [
+						"beta",
+						"live",
+						"images"
+					],
+					"query": [
+						{
+							"key": "idxID",
+							"value": "{{idxID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccessToken",
+						"value": "{{AccessToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://data-services.idxbroker.com/beta/live/agents?idxID={{idxID}}",
+					"protocol": "https",
+					"host": [
+						"data-services",
+						"idxbroker",
+						"com"
+					],
+					"path": [
+						"beta",
+						"live",
+						"agents"
+					],
+					"query": [
+						{
+							"key": "idxID",
+							"value": "{{idxID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "offices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccessToken",
+						"value": "{{AccessToken}}"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://data-services.idxbroker.com/beta/live/offices?idxID={{idxID}}",
+					"protocol": "https",
+					"host": [
+						"data-services",
+						"idxbroker",
+						"com"
+					],
+					"path": [
+						"beta",
+						"live",
+						"offices"
+					],
+					"query": [
+						{
+							"key": "idxID",
+							"value": "{{idxID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mlsinfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accessToken",
+						"value": "{{AccessToken}}",
+						"description": "The access token"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://data-services.idxbroker.com/beta/live/mlsinfo",
+					"protocol": "https",
+					"host": [
+						"data-services",
+						"idxbroker",
+						"com"
+					],
+					"path": [
+						"beta",
+						"live",
+						"mlsinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "429d0957-d672-4ec4-828a-00b04dd7f697",
+						"type": "text/javascript",
+						"exec": [
+							" var legnth = responseBody.length;",
+							" if (responseCode.code === 200 && legnth > 0) {",
+							"    // set variable of body legnth and assume true",
+							"    var bodyLength = true;",
+							"    // parse json response",
+							"    var isJson = JSON.parse(responseBody);",
+							"    // test for valid json",
+							"    tests[\"Valid JSON\"] = isJson;",
+							"    //set global variable",
+							"    pm.globals.set(\"AccessToken\", isJson[\"accessToken\"]);",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://data-services.idxbroker.com/beta/live/token",
+					"protocol": "https",
+					"host": [
+						"data-services",
+						"idxbroker",
+						"com"
+					],
+					"path": [
+						"beta",
+						"live",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "163336d9-829b-4614-8ae6-38d5bb0b897a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "529e3fe0-36f6-491e-b195-986d923b0ec4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
