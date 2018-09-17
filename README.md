@@ -1,7 +1,7 @@
 # BulkData
 
 ## Resources
-- [Documentation](https://idxbroker.github.io/bulkdata/)
+- [Online Documentation](https://idxbroker.github.io/bulkdata/)
 - [Postman collection](https://raw.githubusercontent.com/idxbroker/bulkdata/master/BulkdataAPI.postman_collection.json)
 
 Postman is a API testing tool. 
