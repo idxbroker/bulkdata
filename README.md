@@ -8,6 +8,6 @@ Postman is a API testing tool.
 
 Postman is free and makes API discovery easy and sharable.
 
-[Get Poistman](https://www.getpostman.com/apps)
+[Get Postman](https://www.getpostman.com/apps)
 
 [Using Postman Collections](https://learning.getpostman.com/docs/postman/collections/creating_collections/)
