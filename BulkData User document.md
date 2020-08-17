@@ -103,7 +103,7 @@ https://data-services.idxbroker.com/beta/live/listings
 | **idxID**  | ✅        | Only allow one<br /> e.g. [https://data-services.idxbroker.com/beta/live/listings?idxID=a001](https://data-services.idxbroker.com/beta/live/listings?idxID=a001) |
 | listingID  | ❌        | Allow one or muliple listingID<br />e.g. listingID=x0000001 or listingID=x0000001,x0000002 |
 | propStatus | ❌        | Allow one or muliple propStatus<br />e.g. propStatus=active or propStatus=active,pending |
-| mlsPtID    | ❌        | Allow one or muliple mlsPtID<br />e.g. mlsPtID=Residential or mlsPtID=Residential,Land |
+| mlsPtID    | ❌        | Allow one or muliple mlsPtID<br />e.g. mlsPtID=1 or mlsPtID=1,2 |
 | updated    | ❌        | (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or muliple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
 | limit      | ❌        | Only allow one and maximum is 500.<br />e.g. limit=499       |
 | offset     | ❌        | e.g. offset=1000                                             |
