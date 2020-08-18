@@ -320,9 +320,6 @@ We recommend beginning with a full update, and then running incremental updates 
 
 # Resources
 
-## Status Page
-
-Users can check the <a href="http://system-status.idxbroker.com/" target="_blank">system status page</a> at any time for current service status. They may also sign up for email notifications or subscribe to an RSS feed to get the most up-to-date information.
 
 ## Postman
 
