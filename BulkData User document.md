@@ -151,9 +151,6 @@ https://data-services.idxbroker.com/beta/live/listings
 }
 ```
 
-#### Info
-- Some MLS systems provide their own internal values for property type. These internal values are designed for computer systems and not humans to read, so we highly recommend using the property type values provided by the mlsinfo endpoint rather than the default.
-
 ### Images endpoint
 
 https://data-services.idxbroker.com/beta/live/images
