@@ -98,16 +98,18 @@ https://data-services.idxbroker.com/beta/live/listings
 
 #### Request URL parameters
 
-| Parameter  | Required | Addtional                                                    |
-| :--------- | :------- | ------------------------------------------------------------ |
-| **idxID**  | ✅        | Only allow one<br /> e.g. [https://data-services.idxbroker.com/beta/live/listings?idxID=a001](https://data-services.idxbroker.com/beta/live/listings?idxID=a001) |
-| listingID  | ❌        | Allow one or muliple listingID<br />e.g. listingID=x0000001 or listingID=x0000001,x0000002 |
-| propStatus | ❌        | Allow one or muliple propStatus<br />e.g. propStatus=active or propStatus=active,pending |
-| mlsPtID    | ❌        | Allow one or muliple mlsPtID<br />e.g. mlsPtID=1 or mlsPtID=1,2 |
-| updated    | ❌        | (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or muliple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
-| limit      | ❌        | Only allow one and maximum is 500.<br />e.g. limit=499       |
-| offset     | ❌        | e.g. offset=1000                                             |
+| Parameter      | Required | Addtional                                                    |
+| :------------- | :------- | ------------------------------------------------------------ |
+| **idxID**      | ✅        | Only allow one<br /> e.g. [https://data-services.idxbroker.com/beta/live/listings?idxID=a001](https://data-services.idxbroker.com/beta/live/listings?idxID=a001) |
+| listingID      | ❌        | Allow one or multiple listingID<br />e.g. listingID=x0000001 or listingID=x0000001,x0000002 |
+| statusCategory | ❌        | Allow one or multiple statusCategory - active, sold, offmarket<br />e.g. statusCategory=active or statusCategory=active,sold |
+| mlsPtID        | ❌        | Allow one or multiple mlsPtID<br />e.g. mlsPtID=1 or mlsPtID=1,2 |
+| updated        | ❌        | (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or multiple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
+| limit          | ❌        | Only allow one and maximum is 500.<br />e.g. limit=499       |
+| offset         | ❌        | e.g. offset=1000                                             |
+| select         | ❌        | Allow one or multiple select.<br />e.g. select=listingID or select=listingID,idxID |
 #### Response
+
 ```json
 {
     "total": 999,
@@ -167,8 +169,8 @@ https://data-services.idxbroker.com/beta/live/images
 | Parameter     | Required | Addtional|
 | ------------- | -------- | ---------|
 | **idxID**    | ✅        | Only allow one, e.g. idxID=a001|
-| listingID | ❌        | Allow one or muliple listingID<br />e.g. listingID=x0000001ororlistingID=x0000001,x0000002 |
-| updated   | ❌        | (**gt, gte, lt, lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or muliple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
+| listingID | ❌        | Allow one or multiple listingID<br />e.g. listingID=x0000001ororlistingID=x0000001,x0000002 |
+| updated   | ❌        | (**gt, gte, lt, lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or multiple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
 | limit     | ❌        | Only allow one and maximum is 500.e.g.limit=499|
 | offset    | ❌        | e.g. offset=1000 |
 
@@ -212,11 +214,12 @@ https://data-services.idxbroker.com/beta/live/agents
 | Parameter | Required | Addtional                                                    |
 | :-------- | :------- | ------------------------------------------------------------ |
 | **idxID** | ✅        | Only allow one, e.g. idxID=a001                              |
-| agentID   | ❌        | Allow one or muliple agentID<br />e.g. agentID=V211511918 or agentID=V211511918,V211512197 |
-| officeID  | ❌        | Allow one or muliple officeID<br />e.g. officeID=V3600 or officeID=V3600,V6241 |
-| updated   | ❌        | (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or muliple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
+| agentID   | ❌        | Allow one or multiple agentID<br />e.g. agentID=V211511918 or agentID=V211511918,V211512197 |
+| officeID  | ❌        | Allow one or multiple officeID<br />e.g. officeID=V3600 or officeID=V3600,V6241 |
+| updated   | ❌        | (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or multiple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
 | limit     | ❌        | Only allow one and maximum is 500.<br />e.g. limit=499       |
 | offset    | ❌        | e.g. offset=1000                                             |
+| select    | ❌        | Allow one or multiple select.<br />e.g. select=agentID or select=agentID,idxID |
 
 #### Response
 
@@ -258,10 +261,11 @@ https://data-services.idxbroker.com/beta/live/offices
 | Parameter | Required | Addtional|
 | :-------- | :------- | ---------|
 | idxID     |✅| Only allow one, e.g. idxID=a001|
-| officeID  | ❌| Allow one or muliple officeID<br />e.g. officeID=V3600 or officeID=V3600,V6241 |
-| updated|❌| (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or muliple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
+| officeID  | ❌| Allow one or multiple officeID<br />e.g. officeID=V3600 or officeID=V3600,V6241 |
+| updated|❌| (**gt**, **gte**, **lt**, **lte**):YYYY-MM-DDThh:mm:SS<br />Allow one or multiple updated<br />e.g. updated=gt:2017-01-01 or updated=gt:2017-01-01,lt:2017-02-01 |
 | limit|❌| Only allow one and maximum is 500.<br />e.g. limit=499 |
 | offset| ❌| e.g. offset=1000 |
+| select | ❌ | Allow one or multiple select.<br />e.g. select=officeID or select=officeID,idxID |
 
 #### Response
 
@@ -326,6 +330,12 @@ The BulkData API <a href="https://github.com/idxbroker/bulkdata" target="_blank"
 - <a href="https://github.com/idxbroker/bulkdata-php-starter" target="_blank">bulkdata-php-starter</a>
 
 ## Changelog
+
+#### 2021-01-28
+
+- Support  `statusCategory` query parameter on listings endpoint
+- Support  `select` query parameter on listings, agents, and offices endpoints
+- Remove `propStatus` query parameter on listings endpoint
 
 #### 2020-08-17
 
